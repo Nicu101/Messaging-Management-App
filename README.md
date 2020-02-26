@@ -2,10 +2,13 @@
 
   Descriere Generala:
     --> Severul (unic) - va realiza legătura intre clientii din platformă, cu scopul publicării si abonării la mesaje.
+    
     --> Clientii TCP - vor avea următorul comportament: un client TCP se conectează la server, poate primi (in orice moment)
     de la tastatură(interactiunea cu utilizatorul uman) comenzi de tipul subscribe si unsubscribe, afisand pe ecran mesajele
     primite de la server.
+    
     --> Clientii UDP - vor trimite catre server mesaje in platforma propusa folosind un protocol predefinit.
+    
     
  1. Servarul:
   Serverul va avea rolul de broker (componentă de intermediere) in platforma de gestionare a mesajelor. Acesta
