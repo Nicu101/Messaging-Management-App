@@ -9,7 +9,7 @@ import json
 import os
 import argparse
 from ipaddress import ip_address
-from utils.unpriv_port import unprivileged_port_type, get_unprivileged_port_meta
+from unpriv_port import unprivileged_port_type, get_unprivileged_port_meta
 import textwrap
 
 
