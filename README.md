@@ -16,13 +16,14 @@ IP disponibile local. Pornirea serverului se va face folosind comanda:
 clientilor TCP conectati in acel moment.
   Comunicarea cu clientii UDP.
   Pentru comunicare, se vor folosi mesaje ce respectă un format definit:
-             |        Topic                      |            Tip Date                    |          Continut
--------------|-----------------------------------|----------------------------------------|-------------------------------------
-Dimensiune:  |  Fix 50 de bytes                  |             1 octet                    |        Maxim 1500 de octeti
--------------|-----------------------------------|----------------------------------------|-------------------------------------
-Format:      |   Sir de maxim 50 de              |   unsinged int pe 1 octet folosit      |       Variabil in functie de tipul
-             | caractere, terminat cu \0 pentru  |       pentru a specifica tipul de      |                    de date.
-             | dimensiuni mai mici de 50.        |        date al continutului.           |
+             |        Topic                     |          Tip Date                |      Continut
+-------------|----------------------------------|----------------------------------|--------------------------------
+Dimensiune:  |  Fix 50 de bytes                 |           1 octet                |    Maxim 1500 de octeti
+-------------|----------------------------------|----------------------------------|--------------------------------
+Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosit  |   Variabil in functie de tipul
+             | caractere, terminat cu \0 pentru |     pentru a specifica tipul de  |             de date.
+             | dimensiuni mai mici de 50.       |      date al continutului.       |
+
 
  2. Clientii TCP:
  Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare:
@@ -30,8 +31,7 @@ Format:      |   Sir de maxim 50 de              |   unsinged int pe 1 octet fol
   unde:
   • ID_Client este un sir de caractere ce reprezintă ID-ul clientului;
   • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal;
-  • Port_Server reprezintă portul pe care serverul asteaptă conexiuni.
-  
+  • Port_Server reprezintă portul pe care serverul asteaptă conexiuni.  
   Clientii de TCP pot primi de la tastatură una dintre următoarele comenzi:
     • subscribe - anuntă serverul că un client este interesat de un anumit topic; comanda are următorul format: 
     "subscribe topic SF" , unde:
