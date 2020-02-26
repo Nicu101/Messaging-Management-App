@@ -12,6 +12,7 @@
     
     
  1. Servarul:
+ 
   Serverul va avea rolul de broker (componentă de intermediere) in platforma de gestionare a mesajelor. Acesta
 va deschide 2 socketi (unul TCP si unul UDP) pe un port primit ca parametru si va astepta conexiuni/datagrame pe toate adresele
 IP disponibile local. Pornirea serverului se va face folosind comanda:
@@ -19,7 +20,8 @@ IP disponibile local. Pornirea serverului se va face folosind comanda:
   Serverul va accepta, de la tastatură, doar comanda exit ce va avea ca efect inchiderea simultană a serverului si a tuturor
 clientilor TCP conectati in acel moment.
   Comunicarea cu clientii UDP.
-  Pentru comunicare, se vor folosi mesaje ce respectă un format definit:
+  Pentru comunicare, se vor folosi mesaje ce respectă un format definit.
+  
              |        Topic                     |          Tip Date                |      Continut
 -------------|----------------------------------|----------------------------------|--------------------------------
 Dimensiune:  |  Fix 50 de bytes                 |           1 octet                |    Maxim 1500 de octeti
@@ -30,12 +32,12 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
 
 
  2. Clientii TCP:
- Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare:
+ Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare
+ 
     ./subscriber <ID_Client> <IP_Server> <Port_Server>
-  unde:
-  • ID_Client este un sir de caractere ce reprezintă ID-ul clientului.
-  • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal.
-  • Port_Server reprezintă portul pe care serverul asteaptă conexiuni. 
+    • ID_Client este un sir de caractere ce reprezintă ID-ul clientului.
+    • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal.
+    • Port_Server reprezintă portul pe care serverul asteaptă conexiuni. 
   
   Clientii de TCP pot primi de la tastatură una dintre următoarele comenzi:
   
@@ -69,9 +71,12 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
   4. Functionarea aplicatiei:
   Initializarea aplicatiei este dată de pornirea serverului, la care ulterior se vor putea conecta un număr variabil de clienti
  TCP / UDP. Se cere ca serverul să permită conectarea/deconectarea de (noi) clienti la orice moment.
+ 
   Fiecare client va fi identificat prin 'client_id-ul' cu care acesta a fost pornit. La un moment dat, nu vor exista 2 clienti
  conectati cu acelasi ID.
+ 
   ID-ul unui client va fi un sir de maxim 10 caractere ASCII.
+  
   Serverul trebuie să tină evidenta topic-urilor la care este abonat fiecare dintre clienti. La primirea unui mesaj UDP valid,
  serverul trebuie să asigure trimiterea acestuia către toti clientii TCP care sunt abonati la topicul respectiv.
       
