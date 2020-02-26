@@ -52,14 +52,19 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
   
   3. Clientii UDP:
   Pentru a-l rula este nevoie de Python 3.x. Nu sunt necesare biblioteci 3rd-party.
+  
   Următoarele sunt câteva exemple de comenzi valide cu care se poate face rularea unui client, dacă serverul rulează local
  pe portul 8080:
+ 
     • python3 udp_client.py 127.0.0.1 8080
     • python3 udp_client.py --mode manual 127.0.0.1 8080
     • python3 udp_client.py --source-port 1234 --input_file three_topics_payloads.json --mode random --delay 2000 127.0.0.1 8080
+  
   În arhiva cu clientul se găsesc și 2 fișiere de input:
+  
     • sample_payloads.json - conține mesaje trimise cu topicuri sugestive;
     • three_topics_payloads.json - conține o parte din conținuturile din sample_payloads.json. trimise pe doar 3 topicuri.
+    
     
   4. Functionarea aplicatiei:
   Initializarea aplicatiei este dată de pornirea serverului, la care ulterior se vor putea conecta un număr variabil de clienti
