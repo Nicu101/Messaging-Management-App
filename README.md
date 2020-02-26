@@ -1,6 +1,7 @@
 # Messaging-Management-App
 
   Descriere Generala:
+  
     --> Severul (unic) - va realiza legătura intre clientii din platformă, cu scopul publicării si abonării la mesaje.
     
     --> Clientii TCP - vor avea următorul comportament: un client TCP se conectează la server, poate primi (in orice moment)
@@ -32,9 +33,13 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
  Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare:
     ./subscriber <ID_Client> <IP_Server> <Port_Server>
   unde:
+  
   • ID_Client este un sir de caractere ce reprezintă ID-ul clientului;
+  
   • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal;
-  • Port_Server reprezintă portul pe care serverul asteaptă conexiuni.  
+  
+  • Port_Server reprezintă portul pe care serverul asteaptă conexiuni. 
+  
   Clientii de TCP pot primi de la tastatură una dintre următoarele comenzi:
     • subscribe - anuntă serverul că un client este interesat de un anumit topic; comanda are următorul format: 
     "subscribe topic SF" , unde:
