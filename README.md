@@ -33,21 +33,22 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
  Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare:
     ./subscriber <ID_Client> <IP_Server> <Port_Server>
   unde:
-  
-  • ID_Client este un sir de caractere ce reprezintă ID-ul clientului;
-  
-  • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal;
-  
+  • ID_Client este un sir de caractere ce reprezintă ID-ul clientului.
+  • IP_Server reprezintă adresa IPv4 a serverului reprezentată folosind notatia dotted-decimal.
   • Port_Server reprezintă portul pe care serverul asteaptă conexiuni. 
   
   Clientii de TCP pot primi de la tastatură una dintre următoarele comenzi:
+  
     • subscribe - anuntă serverul că un client este interesat de un anumit topic; comanda are următorul format: 
     "subscribe topic SF" , unde:
           – topic reprezintă topicul la care clientul urmează să se aboneze;
           – SF poate avea valoarea 0 sau 1(1 - vrea sa primeasca mesajele aparute cand era offline; 0 altfel).
+          
     • unsubscribe - anuntă serverul că un client nu mai este interesat de un anumit topic; comanda are următorul format:
     "unsubcribe topic" , unde topic reprezintă topicul de la care clientul urmează să se aboneze;
+    
     • "exit" - comanda va fi folosită pentru a realiza ı̂nchiderea clientului.
+  
   
   3. Clientii UDP:
   Pentru a-l rula este nevoie de Python 3.x. Nu sunt necesare biblioteci 3rd-party.
