@@ -27,9 +27,9 @@ clientilor TCP conectati in acel moment.
   
 
                  |        Topic                     |          Tip Date                |      Continut
-
+    --------------------------------------------------------------------------------------------------------------------
     Dimensiune:  |  Fix 50 de bytes                 |           1 octet                |    Maxim 1500 de octeti
-
+    --------------------------------------------------------------------------------------------------------------------
     Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosit  |   Variabil in functie de tipul
                  | caractere, terminat cu \0 pentru |     pentru a specifica tipul de  |             de date.
                  | dimensiuni mai mici de 50.       |      date al continutului.       |
