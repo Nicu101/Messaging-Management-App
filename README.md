@@ -16,11 +16,15 @@
   Serverul va avea rolul de broker (componentă de intermediere) in platforma de gestionare a mesajelor. Acesta
 va deschide 2 socketi (unul TCP si unul UDP) pe un port primit ca parametru si va astepta conexiuni/datagrame pe toate adresele
 IP disponibile local. Pornirea serverului se va face folosind comanda:
+
     ./server <PORT_DORIT>
+    
   Serverul va accepta, de la tastatură, doar comanda exit ce va avea ca efect inchiderea simultană a serverului si a tuturor
 clientilor TCP conectati in acel moment.
+
   Comunicarea cu clientii UDP.
-  Pentru comunicare, se vor folosi mesaje ce respectă un format definit.
+  Pentru comunicare, se vor folosi mesaje ce respectă un format definit:
+  
   
              |        Topic                     |          Tip Date                |      Continut
 -------------|----------------------------------|----------------------------------|--------------------------------
@@ -32,6 +36,7 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
 
 
  2. Clientii TCP:
+ 
  Clientii de TCP pot fi in orice număr, la fel ca cei UDP, si vor fi rulati folosind comanda următoare
  
     ./subscriber <ID_Client> <IP_Server> <Port_Server>
@@ -53,6 +58,7 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
   
   
   3. Clientii UDP:
+  
   Pentru a-l rula este nevoie de Python 3.x. Nu sunt necesare biblioteci 3rd-party.
   
   Următoarele sunt câteva exemple de comenzi valide cu care se poate face rularea unui client, dacă serverul rulează local
@@ -69,6 +75,7 @@ Format:      |   Sir de maxim 50 de             | unsinged int pe 1 octet folosi
     
     
   4. Functionarea aplicatiei:
+  
   Initializarea aplicatiei este dată de pornirea serverului, la care ulterior se vor putea conecta un număr variabil de clienti
  TCP / UDP. Se cere ca serverul să permită conectarea/deconectarea de (noi) clienti la orice moment.
  
